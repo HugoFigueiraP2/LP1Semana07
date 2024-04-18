@@ -4,15 +4,27 @@ namespace GameUnits
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            
-            Unit unit1 = new Unit(100,50);
-            Unit unit2 = new Unit(80, 30);
-            unit1.Move();
-            unit2.Move();
-            
-            
+
+            Unit mu = new MilitaryUnit(1, 10, 2);
+            Unit su = new SettlerUnit();
+
+            MilitaryUnit attackUnit = mu as MilitaryUnit;
+
+            attackUnit.Attack(su); 
+
+            attackUnit.Move();
+            su.Move();
+
+            Console.WriteLine($"Military Health: {attackUnit.Health}");
+            Console.WriteLine($"Settler Health: {su.Health}");
+            Console.WriteLine($"Military Cost: {attackUnit.Cost}");
+            Console.WriteLine($"Settler Cost: {su.Cost}");
+            attackUnit.Attack(su);
+            Console.WriteLine($"Settler Health after: {su.Health}");
+
+
         }
     }
 }

@@ -1,11 +1,15 @@
-using System;
-
 namespace GameUnits
 {
-    public class Unit
+    public abstract class Unit
     {
         private int movement;
-        public int Health {get; set; }
+
+        public virtual int Health { get; set; }
+
+       
+        public abstract float Cost { get; }
+
+
 
         public Unit(int movement, int health)
         {
@@ -13,10 +17,6 @@ namespace GameUnits
             Health = health;
         }
 
-        public void Move()
-        {   movement++;
-            Console.WriteLine($"Foi movido {movement} casa/s");
-        }
+        public abstract void Move();
     }
-
 }

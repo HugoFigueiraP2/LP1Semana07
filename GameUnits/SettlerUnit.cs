@@ -1,23 +1,32 @@
 using System;
+using System.Runtime.CompilerServices;
 
 namespace GameUnits
 {
-    public class SettlerUnit : Unit
+    public sealed class SettlerUnit : Unit
     {
         
-        public SettlerUnit(int movement, int health)
+        private int movement;
+
+        public override int Health 
         {
-            movement = 1;
-            health = 2;
-
-            
-            
+            get =>  base.Health;  
+            set => base.Health = value; 
+             
         }
-       
-        Unit u = new SettlerUnit();
-        SettlerUnit su = u as SettlerUnit();
+        public override float Cost { get => 5; }
+        public SettlerUnit(int mov = 1, int health = 3) : base(mov ,health)
+        {
+            movement = mov;
+            Health = health ;
+        }
 
+        public override void Move()
+        {
+            movement++; 
+
+            Console.WriteLine($"Foi dado {movement} passo/s!");
         
+        }
     }
-
 }
