@@ -7,7 +7,11 @@ namespace GameUnits
 
         private int movement; 
 
+        public int XP;
+
         public int AttackPower {get; }
+
+
 
 
         
@@ -37,8 +41,6 @@ namespace GameUnits
         
         public override void Move()
         {
-            movement++;
-
             Console.WriteLine(movement);
             
         }
@@ -51,7 +53,7 @@ namespace GameUnits
 
         public override string ToString()
         {
-            return base.ToString() + $"AP={AttackPower}"; 
+            return base.ToString() + $" AP={AttackPower}"; 
         }
     }
 }

@@ -23,8 +23,7 @@ namespace GameUnits
 
         public override void Move()
         {
-            movement++; 
-
+             
             Console.WriteLine($"Foi dado {movement} passo/s!");
         
         }
