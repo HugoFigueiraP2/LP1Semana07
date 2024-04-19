@@ -11,10 +11,6 @@ namespace GameUnits
 
 
         
-        public int XP {get; private set; }
-
-
-        
         public override int Health 
         { 
             get => base.Health;         
@@ -30,7 +26,7 @@ namespace GameUnits
 
         public MilitaryUnit(int mov, int health, int attackPower) : base(mov, health)
         {                         
-            XP          = 0;                                           
+                                                      
             AttackPower = attackPower;
 
 
@@ -55,7 +51,7 @@ namespace GameUnits
 
         public override string ToString()
         {
-            return $"{this.GetType().Name}: HP={Health} COST={Cost:F2} AP={AttackPower} XP={XP}";
+            return base.ToString() + $"AP={AttackPower}"; 
         }
     }
 }
